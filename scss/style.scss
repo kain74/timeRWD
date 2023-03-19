@@ -1,0 +1,229 @@
+@charset 'UTF-8';
+@import 'reset';
+@import url(http://fonts.googleapis.com/css?family=Orbitron);
+
+
+main {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    &.morning{
+        background-image: url(../img/bg_morning.jpg);
+        figure {
+            background-image: url(../img/phone_morning.png);
+        }
+    }
+    &.afternoon{
+        background-image: url(../img/bg_afternoon.jpg);
+        figure {
+            background-image: url(../img/phone_afternoon.png);
+        }
+    }
+    &.evening{
+        background-image: url(../img/bg_evening.jpg);
+        figure {
+            background-image: url(../img/phone_evening.png);
+        }
+    }
+    &.night{
+        background-image: url(../img/bg_night.jpg);
+        figure {
+            background-image: url(../img/phone_night.png);
+        }
+    }
+
+    &.dark_text{
+        header h1,
+        header .gnb li a,
+        header .sns li span,
+        article p,
+        article p strong,
+        article em,
+        figure .screen{
+            color: #222;
+            opacity: 1;
+        }
+    }
+
+    .sky01 {
+        position: absolute;
+        top: -100px;
+        left: -50%;
+        opacity: 0;
+        animation: ani 40s linear 0s infinite;
+    }
+    .sky02 {
+        position: absolute;
+        top: -50px;
+        left: -50%;
+        opacity: 0;
+        animation: ani 60s linear 10s infinite;
+    }
+    header{
+        display: flex;
+        width: 90vw;
+        position: absolute;
+        top: 5vh;
+        left: 5vw;
+        justify-content: space-between;
+        align-items: center;
+
+        h1 {
+            font: bold 30px/1 'orbitron';
+            color: #fff;
+        }
+        .gnb {
+            display: flex;
+            li{
+                margin: 0px 40px;
+                a {
+                    font: bold 14px/1 'arial';
+                    color: #fff;
+                }
+            }
+        }
+        .sns{
+            display: flex;
+            li{
+                margin: 0 10px;
+                span {
+                    font-size: 18px;
+                    color: #fff;
+                }
+            }
+           
+        }
+    }
+    article {
+        width: 40vw;
+        position: absolute;
+        top: 50%;
+        left: 5vw;
+        transform: translateY(-50%);
+        p {
+            font: 4vw/1 'orbitron';
+            color: #fff;
+            margin-bottom: 10px;
+            strong {
+                opacity: 0.7;
+            }
+        }
+        em {
+            font: normal 14px/1.2 'arial';
+            color: #fff;
+            letter-spacing: 2px;
+            
+        }
+    }
+    figure {
+        width: 1200px;
+        height: 800px;
+        position: absolute;
+        right: -50px;
+        top: 50%;
+        transform: translateY(-30%);
+        background-position: right top;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url(../img/phone_morning.png);
+        z-index:10;
+        .screen {
+            width: 540px;
+            height: 300px;
+            position: absolute;
+            top: 99px;
+            left: 129px;
+            font: 60px/300px "orbitron";
+            color: #fff;
+            text-align: center;
+            overflow: hidden;
+            em {
+                display: block;
+                position: absolute;
+                top: 100px;
+                left: 80px;
+                line-height: 1;
+                font-size: 20px;
+                opacity: 0;
+                &.on{
+                    opacity: 1;
+                }
+            }
+            span {
+                display: inline-block;
+                min-width: 100px;
+            }
+            .cl1 {
+                width: 600px;
+                position: absolute;
+                top: 0%;
+                left: -50%;
+                opacity: 0;
+                animation: ani 40s linear 0s infinite;
+            }
+            .cl2 {
+                width: 600px;
+                position: absolute;
+                top: 0%;
+                left: -50%;
+                opacity: 0;
+                animation: ani 60s linear 10s infinite;
+            }
+        }
+    }
+
+    nav {
+        display: flex;
+        width: 90vw;
+        height: 35px;
+        position: absolute;
+        left: 5vw;
+        bottom: 7vh;
+        justify-content: space-between;
+        z-index: 20;
+        span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 23%;
+            height: 100%;
+            color: #fff;
+            font: 12px/1 'orbitron';
+            letter-spacing: 2px;
+            border: 1px solid #bbb;
+            opacity: 0.7;
+            background: rgba(255,255,255,0.3);
+            transition: 0.5s;
+            &.on {
+                color: #000;
+                border: 1px solid #fff;
+                background: rgba(255,255,255,.8);
+            }
+        }
+    }
+
+}
+
+
+@keyframes ani {
+    0% {
+        left: -50%;
+        opacity: 0;
+    }
+    5% {
+        opacity: 0.5;
+    }
+    95% {
+        opacity: 0.5;
+    }
+    100% {
+        left: 80%;
+        opacity: 0;
+    }
+}
